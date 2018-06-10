@@ -16,4 +16,4 @@ FOUNDATION_EXPORT const unsigned char AUv3_GeneratorFrameworkVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <AUv3_GeneratorFramework/PublicHeader.h>
 
-
+#import <AUv3-Generator.h>
