@@ -39,12 +39,12 @@
 ////////////////////////////////
 
 #pragma mark - AUAudioUnit Querying Descriptive Properties
-@property componentDescription;
-@property component;
-@property componentName;
-@property componentVersion;
-@property audioUnitName;
-@property manufacturerName;
+//@property componentDescription;
+//@property component;
+//@property componentName;
+//@property componentVersion;
+//@property audioUnitName;
+//@property manufacturerName;
 
 ///////////////////////////////
 
