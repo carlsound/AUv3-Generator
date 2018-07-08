@@ -6,33 +6,59 @@
 //  Copyright © 2018 John Carlson. All rights reserved.
 //
 
+//
+//  http://subfurther.com/blog/2017/04/28/brain-dump-v3-audio-units/
+//  RingModulator
+//  Created by Chris Adamson on 4/18/17.
+//
+
 #import <AudioToolbox/AudioToolbox.h>
 #import <AVFoundation/AVFoundation.h>
 #import <CoreAudioKit/CoreAudioKit.h>
 
+//////////////////////////////////
+
+#pragma mark - AUv3_Generator : AUAudioUnit parameterTree
+
+extern const AudioUnitParameterID frequencyParam;
+
+//////////////////////////////////
+
+#pragma mark - AUv3_Generator : AUAudioUnit main interface
+
 @interface AUv3_Generator : AUAudioUnit
+
+//////////////////////////////////
+
+#pragma mark - AUv3_Generator : AUAudioUnit main properties
+
+@property (atomic, readwrite) AUParameterTree * _Nullable parameterTree;
+// need these for actual filtering
+@property AUAudioUnitBus * _Nullable outputBus;
+@property AUAudioUnitBusArray * _Nullable inputBusArray;
+@property AUAudioUnitBusArray * _Nullable outputBusArray;
 
 ////////////////////////////////
 
 #pragma mark - AUv3_Generator : AUAudioUnit instatiation
 
-+ (void)instantiateWithComponentDescription:(AudioComponentDescription)componentDescription options:(AudioComponentInstantiationOptions)options completionHandler:(void (^)(AUAudioUnit *audioUnit, NSError *error))completionHandler;
++ (void)instantiateWithComponentDescription:(AudioComponentDescription)componentDescription options:(AudioComponentInstantiationOptions)options completionHandler:(void (^_Nullable)(AUAudioUnit  * _Nullable audioUnit,   NSError * _Nullable error))completionHandler;
 
 #pragma mark - AUv3_Generator : AUAudioUnit initialization
 
-- (AUAudioUnit *)createAudioUnitWithComponentDescription:(AudioComponentDescription)desc error:(NSError * _Nullable *)error;
+- (AUAudioUnit *_Nullable)createAudioUnitWithComponentDescription:(AudioComponentDescription)desc error:(NSError * _Nullable)error;
 
-- (void)requestViewControllerWithCompletionHandler:(void (^)(AUViewControllerBase *viewController))completionHandler;
+- (void)requestViewControllerWithCompletionHandler:(void (^_Nullable)(AUViewControllerBase * _Nullable viewController))completionHandler;
 
 ////////////////////////////////
 
 #pragma mark - AUAudioUnit (AUAudioUnitImplementation)
 
-- (AUInternalRenderBlock)internalRenderBlock;
+- (AUInternalRenderBlock _Nonnull )internalRenderBlock;
 
-+ (void)registerSubclass:(Class)cls asComponentDescription:(AudioComponentDescription)componentDescription name:(NSString *)name version:(UInt32)version;
++ (void)registerSubclass:(Class _Nullable )cls asComponentDescription:(AudioComponentDescription)componentDescription name:(NSString *_Nullable)name versi_Nullableon:(UInt32)version;
 
-- (BOOL)shouldChangeToFormat:(AVAudioFormat *)format forBus:(AUAudioUnitBus *)bus;
+- (BOOL)shouldChangeToFormat:(AVAudioFormat * _Nullable)format forBus:(AUAudioUnitBus * _Nullable)bus;
 
 - (void)setRenderResourcesAllocated:(BOOL)flag;
 
@@ -49,7 +75,7 @@
 ///////////////////////////////
 
 #pragma mark - AUAudioUnit Managing Render Resources
-- (BOOL)allocateRenderResourcesAndReturnError:(NSError * _Nullable *)outError;
+- (BOOL)allocateRenderResourcesAndReturnError:(NSError ** _Nullable)outError;
 
 - (void)deallocateRenderResources;
 
@@ -77,14 +103,14 @@
 /////////////////////////////
 
 #pragma mark - AUAudioUnit Instance Properties
-@property(readonly, copy, atomic) NSString *audioUnitShortName;
-@property(copy, atomic) NSArray<NSNumber *> *channelMap;
+@property(readonly, copy, atomic) NSString * _Nullable audioUnitShortName;
+@property(copy, atomic) NSArray<NSNumber *> * _Nullable channelMap;
 @property(nonatomic, readonly) NSTimeInterval deviceInputLatency;
 @property(nonatomic, readonly) NSTimeInterval deviceOutputLatency;
 @property(nonatomic, readonly, getter=isRunning) BOOL running;
 @property(atomic) NSInteger MIDIOutputBufferSizeHint;
-@property(copy, atomic) AUMIDIOutputEventBlock MIDIOutputEventBlock;
-@property(readonly, copy, atomic) NSArray<NSString *> *MIDIOutputNames;
+@property(copy, atomic) AUMIDIOutputEventBlock _Nullable MIDIOutputEventBlock;
+@property(readonly, copy, atomic) NSArray<NSString *> * _Nullable MIDIOutputNames;
 @property(readonly, atomic) BOOL providesUserInterface;
 @property(readonly, atomic) BOOL supportsMPE;
 
@@ -108,19 +134,19 @@
 /////////////////////////////
 
 #pragma mark - AUAudioUnit Channel Capabilities
-@property(readonly, copy, atomic) NSArray<NSNumber *> *channelCapabilities;
+@property(readonly, copy, atomic) NSArray<NSNumber *> * _Nullable channelCapabilities;
 
 /////////////////////////////
 
 #pragma mark - AUAudioUnit Host Callbacks
-@property(copy, atomic) AUHostMusicalContextBlock musicalContextBlock;
-@property(copy, atomic) AUHostTransportStateBlock transportStateBlock;
-@property(copy, atomic) NSString *contextName;
+@property(copy, atomic) AUHostMusicalContextBlock _Nullable musicalContextBlock;
+@property(copy, atomic) AUHostTransportStateBlock _Nullable transportStateBlock;
+@property(copy, atomic) NSString * _Nullable contextName;
 
 /////////////////////////////
 
 #pragma mark - AUAudioUnit Querying Parameters
-@property(readonly, atomic) AUParameterTree *parameterTree;
+@property(readonly, atomic) AUParameterTree * _Nullable parameterTree;
 @property(readonly, atomic) BOOL allParameterValues;
 - (NSArray<NSNumber *> *)parametersForOverviewWithCount:(NSInteger)count;
 
@@ -129,7 +155,7 @@
 #pragma mark - AUAudioUnit Managing MIDI Events
 @property(readonly, getter=isMusicDeviceOrEffect, atomic) BOOL musicDeviceOrEffect;
 @property(readonly, atomic) NSInteger virtualMIDICableCount;
-@property(readonly, atomic) AUScheduleMIDIEventBlock scheduleMIDIEventBlock;
+@property(readonly, atomic) AUScheduleMIDIEventBlock _Nullable scheduleMIDIEventBlock;
 
 /////////////////////////////
 
