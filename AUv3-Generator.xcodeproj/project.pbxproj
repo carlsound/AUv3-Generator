@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8907565A2103596600FF7013 /* maximilian.h in Headers */ = {isa = PBXBuildFile; fileRef = 890756582103596600FF7013 /* maximilian.h */; };
+		8907565B2103596600FF7013 /* maximilian.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 890756592103596600FF7013 /* maximilian.cpp */; };
 		89B6A89020CDA74B0066C828 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B6A88F20CDA74B0066C828 /* AppDelegate.m */; };
 		89B6A89320CDA74B0066C828 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B6A89220CDA74B0066C828 /* ViewController.m */; };
 		89B6A89520CDA74B0066C828 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89B6A89420CDA74B0066C828 /* Assets.xcassets */; };
@@ -72,6 +74,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		890756582103596600FF7013 /* maximilian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maximilian.h; sourceTree = "<group>"; };
+		890756592103596600FF7013 /* maximilian.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = maximilian.cpp; sourceTree = "<group>"; };
 		89B6A88B20CDA74B0066C828 /* AUv3-GeneratorApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AUv3-GeneratorApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B6A88E20CDA74B0066C828 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		89B6A88F20CDA74B0066C828 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 		89B6A8C120CDA9A70066C828 /* AUv3-GeneratorFramework */ = {
 			isa = PBXGroup;
 			children = (
+				890756592103596600FF7013 /* maximilian.cpp */,
+				890756582103596600FF7013 /* maximilian.h */,
 				89B6A8C220CDA9A70066C828 /* AUv3_GeneratorFramework.h */,
 				89B6A8C320CDA9A70066C828 /* Info.plist */,
 				89B6A8D520CDAF5E0066C828 /* AUv3-Generator.h */,
@@ -218,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89B6A8C420CDA9A70066C828 /* AUv3_GeneratorFramework.h in Headers */,
+				8907565A2103596600FF7013 /* maximilian.h in Headers */,
 				89B6A8D720CDAF5E0066C828 /* AUv3-Generator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8907565B2103596600FF7013 /* maximilian.cpp in Sources */,
 				89B6A8D820CDAF5E0066C828 /* AUv3-Generator.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
