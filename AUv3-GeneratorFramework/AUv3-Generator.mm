@@ -30,7 +30,7 @@ const AudioUnitParameterID frequencyParam = 0;
 //AudioStreamBasicDescription asbd; // local copy of the asbd that block can capture
 
 UInt64 totalFrames = 0;
-AUValue frequency = 22;
+AUValue frequency = 750;
 AudioBufferList renderABL;
 
 maxiOsc *oscillator;
