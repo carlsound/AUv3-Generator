@@ -8,6 +8,6 @@
 
 #import <CoreAudioKit/CoreAudioKit.h>
 
-@interface AudioUnitViewController : AUViewController <AUAudioUnitFactory>
+@interface AUv3_GeneratorViewController : AUViewController <AUAudioUnitFactory>
 
 @end

@@ -6,7 +6,9 @@
 //  Copyright © 2018 John Carlson. All rights reserved.
 //
 
-#import "AUv3-Generator.h"
+#import "AUv3_Generator.h"
+
+#include "maximilian.h"
 
 //////////////////////////////////
 

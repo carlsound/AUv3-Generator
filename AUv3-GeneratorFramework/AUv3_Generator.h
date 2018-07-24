@@ -16,8 +16,6 @@
 #import <AVFoundation/AVFoundation.h>
 #import <CoreAudioKit/CoreAudioKit.h>
 
-#include "maximilian.h"
-
 //////////////////////////////////
 
 #pragma mark - AUv3_Generator : AUAudioUnit parameterTree

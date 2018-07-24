@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8907565A2103596600FF7013 /* maximilian.h in Headers */ = {isa = PBXBuildFile; fileRef = 890756582103596600FF7013 /* maximilian.h */; };
+		8907565A2103596600FF7013 /* maximilian.h in Headers */ = {isa = PBXBuildFile; fileRef = 890756582103596600FF7013 /* maximilian.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8907565B2103596600FF7013 /* maximilian.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 890756592103596600FF7013 /* maximilian.cpp */; };
+		8931B6E421057BD800C0ECEE /* AUv3_GeneratorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8931B6E321057BD800C0ECEE /* AUv3_GeneratorViewController.xib */; };
+		8931B6E721057C5D00C0ECEE /* AUv3_GeneratorViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8931B6E521057C5D00C0ECEE /* AUv3_GeneratorViewController.h */; };
+		8931B6E821057C5D00C0ECEE /* AUv3_GeneratorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8931B6E621057C5D00C0ECEE /* AUv3_GeneratorViewController.m */; };
 		89B6A89020CDA74B0066C828 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B6A88F20CDA74B0066C828 /* AppDelegate.m */; };
 		89B6A89320CDA74B0066C828 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B6A89220CDA74B0066C828 /* ViewController.m */; };
 		89B6A89520CDA74B0066C828 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89B6A89420CDA74B0066C828 /* Assets.xcassets */; };
 		89B6A89820CDA74B0066C828 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B6A89620CDA74B0066C828 /* Main.storyboard */; };
 		89B6A89B20CDA74B0066C828 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B6A89A20CDA74B0066C828 /* main.m */; };
-		89B6A8AB20CDA9440066C828 /* AUv3_GeneratorAppExtensionAudioUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B6A8AA20CDA9440066C828 /* AUv3_GeneratorAppExtensionAudioUnit.m */; };
-		89B6A8AE20CDA9440066C828 /* AudioUnitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B6A8AD20CDA9440066C828 /* AudioUnitViewController.m */; };
-		89B6A8B120CDA9440066C828 /* AudioUnitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89B6A8AF20CDA9440066C828 /* AudioUnitViewController.xib */; };
+		89B6A8AB20CDA9440066C828 /* AUv3_GeneratorViewControllerAndFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B6A8AA20CDA9440066C828 /* AUv3_GeneratorViewControllerAndFactory.m */; };
 		89B6A8B620CDA9440066C828 /* AUv3-GeneratorAppExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 89B6A8A720CDA9440066C828 /* AUv3-GeneratorAppExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		89B6A8C420CDA9A70066C828 /* AUv3_GeneratorFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 89B6A8C220CDA9A70066C828 /* AUv3_GeneratorFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		89B6A8C720CDA9A70066C828 /* AUv3_GeneratorFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B6A8C020CDA9A70066C828 /* AUv3_GeneratorFramework.framework */; };
@@ -25,8 +26,8 @@
 		89B6A8D020CDA9CE0066C828 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B6A8CF20CDA9CE0066C828 /* AVFoundation.framework */; };
 		89B6A8D220CDAB9D0066C828 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B6A8D120CDAB9D0066C828 /* AudioToolbox.framework */; };
 		89B6A8D420CDABAF0066C828 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B6A8D320CDABAF0066C828 /* AudioUnit.framework */; };
-		89B6A8D720CDAF5E0066C828 /* AUv3-Generator.h in Headers */ = {isa = PBXBuildFile; fileRef = 89B6A8D520CDAF5E0066C828 /* AUv3-Generator.h */; };
-		89B6A8D820CDAF5E0066C828 /* AUv3-Generator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 89B6A8D620CDAF5E0066C828 /* AUv3-Generator.mm */; };
+		89B6A8D720CDAF5E0066C828 /* AUv3_Generator.h in Headers */ = {isa = PBXBuildFile; fileRef = 89B6A8D520CDAF5E0066C828 /* AUv3_Generator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89B6A8D820CDAF5E0066C828 /* AUv3_Generator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 89B6A8D620CDAF5E0066C828 /* AUv3_Generator.mm */; };
 		89B6A8DA20CDB2510066C828 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B6A8D920CDB2510066C828 /* CoreAudio.framework */; };
 		89B6A8DC20CDB2630066C828 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B6A8DB20CDB2630066C828 /* Cocoa.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -76,6 +77,9 @@
 /* Begin PBXFileReference section */
 		890756582103596600FF7013 /* maximilian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maximilian.h; sourceTree = "<group>"; };
 		890756592103596600FF7013 /* maximilian.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = maximilian.cpp; sourceTree = "<group>"; };
+		8931B6E321057BD800C0ECEE /* AUv3_GeneratorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AUv3_GeneratorViewController.xib; sourceTree = "<group>"; };
+		8931B6E521057C5D00C0ECEE /* AUv3_GeneratorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUv3_GeneratorViewController.h; sourceTree = "<group>"; };
+		8931B6E621057C5D00C0ECEE /* AUv3_GeneratorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AUv3_GeneratorViewController.m; sourceTree = "<group>"; };
 		89B6A88B20CDA74B0066C828 /* AUv3-GeneratorApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AUv3-GeneratorApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B6A88E20CDA74B0066C828 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		89B6A88F20CDA74B0066C828 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -88,11 +92,8 @@
 		89B6A89C20CDA74B0066C828 /* AUv3_Generator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AUv3_Generator.entitlements; sourceTree = "<group>"; };
 		89B6A8A220CDA8EA0066C828 /* AUv3-GeneratorApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "AUv3-GeneratorApp.entitlements"; sourceTree = "<group>"; };
 		89B6A8A720CDA9440066C828 /* AUv3-GeneratorAppExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "AUv3-GeneratorAppExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		89B6A8A920CDA9440066C828 /* AUv3_GeneratorAppExtensionAudioUnit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUv3_GeneratorAppExtensionAudioUnit.h; sourceTree = "<group>"; };
-		89B6A8AA20CDA9440066C828 /* AUv3_GeneratorAppExtensionAudioUnit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AUv3_GeneratorAppExtensionAudioUnit.m; sourceTree = "<group>"; };
-		89B6A8AC20CDA9440066C828 /* AudioUnitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioUnitViewController.h; sourceTree = "<group>"; };
-		89B6A8AD20CDA9440066C828 /* AudioUnitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioUnitViewController.m; sourceTree = "<group>"; };
-		89B6A8B020CDA9440066C828 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AudioUnitViewController.xib; sourceTree = "<group>"; };
+		89B6A8A920CDA9440066C828 /* AUv3_GeneratorViewControllerAndFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUv3_GeneratorViewControllerAndFactory.h; sourceTree = "<group>"; };
+		89B6A8AA20CDA9440066C828 /* AUv3_GeneratorViewControllerAndFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AUv3_GeneratorViewControllerAndFactory.m; sourceTree = "<group>"; };
 		89B6A8B220CDA9440066C828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89B6A8B320CDA9440066C828 /* AUv3_GeneratorAppExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AUv3_GeneratorAppExtension.entitlements; sourceTree = "<group>"; };
 		89B6A8C020CDA9A70066C828 /* AUv3_GeneratorFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AUv3_GeneratorFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,8 +102,8 @@
 		89B6A8CF20CDA9CE0066C828 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		89B6A8D120CDAB9D0066C828 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		89B6A8D320CDABAF0066C828 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
-		89B6A8D520CDAF5E0066C828 /* AUv3-Generator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AUv3-Generator.h"; sourceTree = "<group>"; };
-		89B6A8D620CDAF5E0066C828 /* AUv3-Generator.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "AUv3-Generator.mm"; sourceTree = "<group>"; };
+		89B6A8D520CDAF5E0066C828 /* AUv3_Generator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUv3_Generator.h; sourceTree = "<group>"; };
+		89B6A8D620CDAF5E0066C828 /* AUv3_Generator.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AUv3_Generator.mm; sourceTree = "<group>"; };
 		89B6A8D920CDB2510066C828 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		89B6A8DB20CDB2630066C828 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -180,11 +181,8 @@
 		89B6A8A820CDA9440066C828 /* AUv3-GeneratorAppExtension */ = {
 			isa = PBXGroup;
 			children = (
-				89B6A8A920CDA9440066C828 /* AUv3_GeneratorAppExtensionAudioUnit.h */,
-				89B6A8AA20CDA9440066C828 /* AUv3_GeneratorAppExtensionAudioUnit.m */,
-				89B6A8AC20CDA9440066C828 /* AudioUnitViewController.h */,
-				89B6A8AD20CDA9440066C828 /* AudioUnitViewController.m */,
-				89B6A8AF20CDA9440066C828 /* AudioUnitViewController.xib */,
+				89B6A8A920CDA9440066C828 /* AUv3_GeneratorViewControllerAndFactory.h */,
+				89B6A8AA20CDA9440066C828 /* AUv3_GeneratorViewControllerAndFactory.m */,
 				89B6A8B220CDA9440066C828 /* Info.plist */,
 				89B6A8B320CDA9440066C828 /* AUv3_GeneratorAppExtension.entitlements */,
 			);
@@ -194,12 +192,15 @@
 		89B6A8C120CDA9A70066C828 /* AUv3-GeneratorFramework */ = {
 			isa = PBXGroup;
 			children = (
+				89B6A8C220CDA9A70066C828 /* AUv3_GeneratorFramework.h */,
+				89B6A8D520CDAF5E0066C828 /* AUv3_Generator.h */,
+				89B6A8D620CDAF5E0066C828 /* AUv3_Generator.mm */,
 				890756592103596600FF7013 /* maximilian.cpp */,
 				890756582103596600FF7013 /* maximilian.h */,
-				89B6A8C220CDA9A70066C828 /* AUv3_GeneratorFramework.h */,
 				89B6A8C320CDA9A70066C828 /* Info.plist */,
-				89B6A8D520CDAF5E0066C828 /* AUv3-Generator.h */,
-				89B6A8D620CDAF5E0066C828 /* AUv3-Generator.mm */,
+				8931B6E321057BD800C0ECEE /* AUv3_GeneratorViewController.xib */,
+				8931B6E521057C5D00C0ECEE /* AUv3_GeneratorViewController.h */,
+				8931B6E621057C5D00C0ECEE /* AUv3_GeneratorViewController.m */,
 			);
 			path = "AUv3-GeneratorFramework";
 			sourceTree = "<group>";
@@ -223,9 +224,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8931B6E721057C5D00C0ECEE /* AUv3_GeneratorViewController.h in Headers */,
 				89B6A8C420CDA9A70066C828 /* AUv3_GeneratorFramework.h in Headers */,
 				8907565A2103596600FF7013 /* maximilian.h in Headers */,
-				89B6A8D720CDAF5E0066C828 /* AUv3-Generator.h in Headers */,
+				89B6A8D720CDAF5E0066C828 /* AUv3_Generator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +349,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89B6A8B120CDA9440066C828 /* AudioUnitViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +356,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8931B6E421057BD800C0ECEE /* AUv3_GeneratorViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,8 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89B6A8AB20CDA9440066C828 /* AUv3_GeneratorAppExtensionAudioUnit.m in Sources */,
-				89B6A8AE20CDA9440066C828 /* AudioUnitViewController.m in Sources */,
+				89B6A8AB20CDA9440066C828 /* AUv3_GeneratorViewControllerAndFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,8 +385,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8931B6E821057C5D00C0ECEE /* AUv3_GeneratorViewController.m in Sources */,
 				8907565B2103596600FF7013 /* maximilian.cpp in Sources */,
-				89B6A8D820CDAF5E0066C828 /* AUv3-Generator.mm in Sources */,
+				89B6A8D820CDAF5E0066C828 /* AUv3_Generator.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,14 +413,6 @@
 				89B6A89720CDA74B0066C828 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		89B6A8AF20CDA9440066C828 /* AudioUnitViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				89B6A8B020CDA9440066C828 /* Base */,
-			);
-			name = AudioUnitViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -570,6 +564,7 @@
 		89B6A8B820CDA9440066C828 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "AUv3-GeneratorAppExtension/AUv3_GeneratorAppExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P8SEUM7VKM;
@@ -588,6 +583,7 @@
 		89B6A8B920CDA9440066C828 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "AUv3-GeneratorAppExtension/AUv3_GeneratorAppExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P8SEUM7VKM;
@@ -607,6 +603,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -636,6 +633,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
