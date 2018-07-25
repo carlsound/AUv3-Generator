@@ -14,14 +14,14 @@
 
 @interface AUv3_GeneratorViewController (){
 
-    __weak IBOutlet NSTextField *frequencyLabel;
+    __weak IBOutlet NSTextField *frequencyTextField;
     __weak IBOutlet NSSlider *frequencySlider;
     
-    AUParameter *cutoffParameter;
+    AUParameter *frequencyParameter;
     AUParameterObserverToken parameterObserverToken;
 }
 
-- (IBAction)setFrequencyFromText:(id)sender;
+- (IBAction)setFrequencyFromTextField:(id)sender;
 
 - (IBAction)setFrequencyFromSlider:(id)sender;
 
@@ -74,7 +74,7 @@
 
     dispatch_async(dispatch_get_main_queue(), ^{
 
-        frequencyLabel.stringValue = [cutoffParameter stringFromValue: nil];
+        frequencyTextField.stringValue = [frequencyParameter stringFromValue: nil];
 
         //[self updateFilterViewFrequencyAndMagnitudes];
     });
@@ -86,11 +86,11 @@
     AUParameterTree *paramTree = _audioUnit.parameterTree;
 
     if (paramTree) {
-        cutoffParameter = [paramTree valueForKey: @"cutoff"];
+        frequencyParameter = [paramTree valueForKey: @"cutoff"];
 
         // prevent retain cycle in parameter observer
         //__weak FilterDemoViewController *weakSelf = self;
-        __weak AUParameter *weakCutoffParameter = cutoffParameter;
+        __weak AUParameter *weakCutoffParameter = frequencyParameter;
         //
         parameterObserverToken = [paramTree tokenByAddingParameterObserver:^(AUParameterAddress address, AUValue value) {
             //__strong FilterDemoViewController *strongSelf = weakSelf;
@@ -100,7 +100,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (address == strongCutoffParameter.address){
                     strongSelf->filterView.frequency = value;
-                    strongSelf->frequencyLabel.stringValue = [strongCutoffParameter stringFromValue: nil];
+                    strongSelf->frequencyTextField.stringValue = [strongCutoffParameter stringFromValue: nil];
                 } else if (address == strongResonanceParameter.address) {
                     strongSelf->filterView.resonance = value;
                     strongSelf->resonanceLabel.stringValue = [strongResonanceParameter stringFromValue: nil];
@@ -111,7 +111,7 @@
              */
         }];
 
-        frequencyLabel.stringValue = [cutoffParameter stringFromValue: nil];
+        frequencyTextField.stringValue = [frequencyParameter stringFromValue: nil];
 
         [_audioUnit addObserver:self forKeyPath:@"allParameterValues"
                         options:NSKeyValueObservingOptionNew
@@ -159,7 +159,7 @@
 
 /*
 - (void)filterViewDidChange:(FilterView *)sender frequency:(double)frequency {
-    cutoffParameter.value = frequency;
+    frequencyParameter.value = frequency;
 
     [self updateFilterViewFrequencyAndMagnitudes];
 }
@@ -179,24 +179,16 @@
 
 #pragma mark: Actions
 
-- (IBAction)setCutoff:(id)sender {
-}
-
-- (IBAction)setFrequencyFromText:(id)sender {
+- (IBAction)setFrequencyFromTextField:(id)sender {
+    frequencyParameter.value = frequencyTextField.floatValue;
+    frequencySlider.floatValue = frequencyTextField.floatValue;
 }
 
 - (IBAction)setFrequencyFromSlider:(id)sender {
-}
-
-- (IBAction) setCutoff:(id) sender {
-    if (sender == frequencyLabel)
-        cutoffParameter.value = frequencyLabel.floatValue;
-
-    //[self updateFilterViewFrequencyAndMagnitudes];
+    frequencyParameter.value = frequencyTextField.floatValue;
+    frequencyTextField.floatValue = frequencySlider.floatValue;
 }
 
 /////////////////
 
-- (IBAction)setCutoff:(id)sender {
-}
 @end

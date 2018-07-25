@@ -7,7 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner">
             <connections>
-                <outlet property="frequencyLabel" destination="UTb-Ox-2j4" id="XVY-Vc-qEU"/>
+                <outlet property="frequencyTextField" destination="UTb-Ox-2j4" id="XVY-Vc-qEU"/>
                 <outlet property="frequencySlider" destination="uX4-M3-qmJ" id="uO1-2V-3n3"/>
             </connections>
         </customObject>
@@ -47,19 +47,22 @@
                         <constraint firstAttribute="width" priority="999" constant="87" id="Cbq-ob-WW2"/>
                     </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="1000.0" drawsBackground="YES" id="90V-mf-dfG">
-                        <numberFormatter key="formatter" formatterBehavior="custom10_4" numberStyle="decimal" alwaysShowsDecimalSeparator="YES" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="1" maximumIntegerDigits="6" minimumFractionDigits="1" maximumFractionDigits="2" id="bX6-RF-jap"/>
+                        <numberFormatter key="formatter" formatterBehavior="custom10_4" numberStyle="decimal" alwaysShowsDecimalSeparator="YES" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="1" maximumIntegerDigits="6" minimumFractionDigits="1" maximumFractionDigits="2" id="bX6-RF-jap">
+                            <real key="minimum" value="20"/>
+                            <real key="maximum" value="20000"/>
+                        </numberFormatter>
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <action selector="setFrequencyFromText:" target="-2" id="O5i-RA-Mvb"/>
+                        <action selector="setFrequencyFromTextField:" target="-2" id="O5i-RA-Mvb"/>
                     </connections>
                 </textField>
                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uX4-M3-qmJ">
                     <rect key="frame" x="6" y="126" width="456" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="v0Q-Nq-sVa"/>
+                    <sliderCell key="cell" state="on" alignment="left" minValue="20" maxValue="20000" doubleValue="1000" tickMarkPosition="above" sliderType="linear" id="v0Q-Nq-sVa"/>
                     <connections>
                         <action selector="setFrequencyFromSlider:" target="-2" id="ODu-TZ-ipB"/>
                     </connections>
