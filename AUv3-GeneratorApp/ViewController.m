@@ -62,9 +62,9 @@
      */
     // MARK: AudioComponentDescription Important!
     // Ensure that you update the AudioComponentDescription for your AudioUnit type, manufacturer and creator type.
-    desc.componentType = 'aufx';
-    desc.componentSubType = 'f1tR';
-    desc.componentManufacturer = 'Demo';
+    desc.componentType = 'augn';
+    desc.componentSubType = 'gnr8';
+    desc.componentManufacturer = 'CRLS';
     desc.componentFlags = 0;
     desc.componentFlagsMask = 0;
 
@@ -97,11 +97,10 @@
 
 - (void)embedPlugInView {
     NSURL *builtInPlugInURL = [[NSBundle mainBundle] builtInPlugInsURL];
-    NSURL *pluginURL = [builtInPlugInURL URLByAppendingPathComponent: @"FilterDemoAppExtension.appex"];
+    NSURL *pluginURL = [builtInPlugInURL URLByAppendingPathComponent: @"AUv3_GeneratorAppExtension.appex"];
     NSBundle *appExtensionBundle = [NSBundle bundleWithURL: pluginURL];
 
-    auV3ViewController = [[AUv3_GeneratorViewController ViewController alloc] initWithNibName: @"FilterDemoViewController"
-                                                                    bundle: appExtensionBundle];
+    auV3ViewController = [[AUv3_GeneratorViewController alloc] initWithNibName: @"AUv3_GeneratorViewController" bundle: appExtensionBundle];
 
     NSView *view = auV3ViewController.view;
     view.frame = _containerView.bounds;
@@ -131,13 +130,13 @@
 
     __weak ViewController *weakSelf = self;
     //parameterObserverToken = [parameterTree tokenByAddingParameterObserver:^(AUParameterAddress address, AUValue value) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            __strong ViewController *strongSelf = weakSelf;
+        //dispatch_async(dispatch_get_main_queue(), ^{
+            //__strong ViewController *strongSelf = weakSelf;
 
             //if (address == frequencyParameter.address)
-                [strongSelf updateCutoff];
-        });
-    }];
+                //[strongSelf updateCutoff];
+        //});
+    //}];
 
     //[self updateCutoff];
     //[self updateResonance];
@@ -190,7 +189,7 @@ static double frequencyValueForSliderLocation(double location) {
     // map to 2^0 - 2^9 (slider range)
     normalizedValue = (normalizedValue * 511.0) + 1;
 
-    double location = logValueForNumber(normalizedValue);
+    //double location = logValueForNumber(normalizedValue);
     //cutoffSlider.doubleValue = location;
 }
 
