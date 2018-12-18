@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		8907565A2103596600FF7013 /* maximilian.h in Headers */ = {isa = PBXBuildFile; fileRef = 890756582103596600FF7013 /* maximilian.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8907565B2103596600FF7013 /* maximilian.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 890756592103596600FF7013 /* maximilian.cpp */; };
+		891C867921C8A1EA00F34195 /* DSPKernel.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 891C867721C8A1EA00F34195 /* DSPKernel.hpp */; };
+		891C867A21C8A1EA00F34195 /* DSPKernel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 891C867821C8A1EA00F34195 /* DSPKernel.mm */; };
+		891C867C21C8A24E00F34195 /* AUv3_GeneratorDSPKernel.h in Headers */ = {isa = PBXBuildFile; fileRef = 891C867B21C8A24E00F34195 /* AUv3_GeneratorDSPKernel.h */; };
 		8931B6E421057BD800C0ECEE /* AUv3_GeneratorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8931B6E321057BD800C0ECEE /* AUv3_GeneratorViewController.xib */; };
 		8931B6E721057C5D00C0ECEE /* AUv3_GeneratorViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8931B6E521057C5D00C0ECEE /* AUv3_GeneratorViewController.h */; };
 		8931B6E821057C5D00C0ECEE /* AUv3_GeneratorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8931B6E621057C5D00C0ECEE /* AUv3_GeneratorViewController.m */; };
@@ -77,6 +80,9 @@
 /* Begin PBXFileReference section */
 		890756582103596600FF7013 /* maximilian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maximilian.h; sourceTree = "<group>"; };
 		890756592103596600FF7013 /* maximilian.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = maximilian.cpp; sourceTree = "<group>"; };
+		891C867721C8A1EA00F34195 /* DSPKernel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DSPKernel.hpp; sourceTree = "<group>"; };
+		891C867821C8A1EA00F34195 /* DSPKernel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DSPKernel.mm; sourceTree = "<group>"; };
+		891C867B21C8A24E00F34195 /* AUv3_GeneratorDSPKernel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUv3_GeneratorDSPKernel.h; sourceTree = "<group>"; };
 		8931B6E321057BD800C0ECEE /* AUv3_GeneratorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AUv3_GeneratorViewController.xib; sourceTree = "<group>"; };
 		8931B6E521057C5D00C0ECEE /* AUv3_GeneratorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUv3_GeneratorViewController.h; sourceTree = "<group>"; };
 		8931B6E621057C5D00C0ECEE /* AUv3_GeneratorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AUv3_GeneratorViewController.m; sourceTree = "<group>"; };
@@ -192,6 +198,8 @@
 		89B6A8C120CDA9A70066C828 /* AUv3-GeneratorFramework */ = {
 			isa = PBXGroup;
 			children = (
+				891C867721C8A1EA00F34195 /* DSPKernel.hpp */,
+				891C867821C8A1EA00F34195 /* DSPKernel.mm */,
 				89B6A8C220CDA9A70066C828 /* AUv3_GeneratorFramework.h */,
 				89B6A8D520CDAF5E0066C828 /* AUv3_Generator.h */,
 				89B6A8D620CDAF5E0066C828 /* AUv3_Generator.mm */,
@@ -201,6 +209,7 @@
 				8931B6E321057BD800C0ECEE /* AUv3_GeneratorViewController.xib */,
 				8931B6E521057C5D00C0ECEE /* AUv3_GeneratorViewController.h */,
 				8931B6E621057C5D00C0ECEE /* AUv3_GeneratorViewController.m */,
+				891C867B21C8A24E00F34195 /* AUv3_GeneratorDSPKernel.h */,
 			);
 			path = "AUv3-GeneratorFramework";
 			sourceTree = "<group>";
@@ -225,6 +234,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8931B6E721057C5D00C0ECEE /* AUv3_GeneratorViewController.h in Headers */,
+				891C867921C8A1EA00F34195 /* DSPKernel.hpp in Headers */,
+				891C867C21C8A24E00F34195 /* AUv3_GeneratorDSPKernel.h in Headers */,
 				89B6A8C420CDA9A70066C828 /* AUv3_GeneratorFramework.h in Headers */,
 				8907565A2103596600FF7013 /* maximilian.h in Headers */,
 				89B6A8D720CDAF5E0066C828 /* AUv3_Generator.h in Headers */,
@@ -385,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				891C867A21C8A1EA00F34195 /* DSPKernel.mm in Sources */,
 				8931B6E821057C5D00C0ECEE /* AUv3_GeneratorViewController.m in Sources */,
 				8907565B2103596600FF7013 /* maximilian.cpp in Sources */,
 				89B6A8D820CDAF5E0066C828 /* AUv3_Generator.mm in Sources */,

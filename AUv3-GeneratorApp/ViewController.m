@@ -70,7 +70,7 @@
 
     [AUAudioUnit registerSubclass: AUv3_Generator .class
            asComponentDescription: desc
-                             name: @"Demo: Local AUv3"
+                             name: @"Generator: Local AUv3"
                           version: UINT32_MAX];
 
     //playEngine = [[SimplePlayEngine alloc] initWithComponentType: desc.componentType componentsFoundCallback: nil];
@@ -128,7 +128,7 @@
    // auV3ViewController.audioUnit = (AUv3_Generator *)playEngine.testAudioUnit;
     //frequencyParameter = [parameterTree valueForKey: @"cutoff"];
 
-    __weak ViewController *weakSelf = self;
+    //__weak ViewController *weakSelf = self;
     //parameterObserverToken = [parameterTree tokenByAddingParameterObserver:^(AUParameterAddress address, AUValue value) {
         //dispatch_async(dispatch_get_main_queue(), ^{
             //__strong ViewController *strongSelf = weakSelf;

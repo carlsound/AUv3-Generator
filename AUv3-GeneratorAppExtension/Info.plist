@@ -34,13 +34,13 @@
 					<key>factoryFunction</key>
 					<string>AUv3_GeneratorViewController</string>
 					<key>manufacturer</key>
-					<string>CRLS</string>
+					<string>Crls</string>
 					<key>name</key>
-					<string>CRLS: AUv3-GeneratorAppExtension</string>
+					<string>Crls: AUv3-GeneratorAppExtension</string>
 					<key>sandboxSafe</key>
 					<true/>
 					<key>subtype</key>
-					<string>gnr8</string>
+					<string>genr</string>
 					<key>tags</key>
 					<array/>
 					<key>type</key>

@@ -31,27 +31,9 @@
 
 @implementation AUv3_GeneratorViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do view setup here.
-
-    if (_audioUnit) {
-        [self connectViewWithAU];
-    }
-}
-
-/////////////////
-
-- (void)dealloc {
-    [self disconnectViewWithAU];
-}
-
-/////////////////
+/////////////////////////////////////////////
 
 #pragma mark-
-- (AUv3_Generator *)getAudioUnit {
-    return _audioUnit;
-}
 
 - (void)setAudioUnit:(AUv3_Generator *)audioUnit {
     _audioUnit = audioUnit;
@@ -62,22 +44,14 @@
     });
 }
 
+- (AUv3_Generator *)getAudioUnit {
+    return _audioUnit;
+}
+
 /////////////////
 
-#pragma mark-
-- (void)observeValueForKeyPath:(NSString *)keyPath
-                      ofObject:(id)object
-                        change:(NSDictionary<NSString *, id> *)change
-                       context:(void *)context
-{
-    NSLog(@"FilterDemoViewControler allParameterValues key path changed: %s\n", keyPath.UTF8String);
-
-    dispatch_async(dispatch_get_main_queue(), ^{
-
-        frequencyTextField.stringValue = [frequencyParameter stringFromValue: nil];
-
-        //[self updateFilterViewFrequencyAndMagnitudes];
-    });
+- (void)dealloc {
+    [self disconnectViewWithAU];
 }
 
 /////////////////
@@ -90,11 +64,11 @@
 
         // prevent retain cycle in parameter observer
         //__weak FilterDemoViewController *weakSelf = self;
-        __weak AUParameter *weakCutoffParameter = frequencyParameter;
+        //__weak AUParameter *weakCutoffParameter = frequencyParameter;
         //
         parameterObserverToken = [paramTree tokenByAddingParameterObserver:^(AUParameterAddress address, AUValue value) {
             //__strong FilterDemoViewController *strongSelf = weakSelf;
-            __strong AUParameter *strongCutoffParameter = weakCutoffParameter;
+            //__strong AUParameter *strongCutoffParameter = weakCutoffParameter;
             //
             /*
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -121,7 +95,7 @@
     }
 }
 
-/////////////////
+//////////////////
 
 - (void)disconnectViewWithAU {
     if (parameterObserverToken) {
@@ -129,6 +103,35 @@
         [_audioUnit removeObserver:self forKeyPath:@"allParameterValues" context:parameterObserverToken];
         parameterObserverToken = 0;
     }
+}
+
+/////////////////
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do view setup here.
+    
+    if (_audioUnit) {
+        [self connectViewWithAU];
+    }
+}
+
+/////////////////
+
+#pragma mark-
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary<NSString *, id> *)change
+                       context:(void *)context
+{
+    NSLog(@"AUv3_GeneratorViewControler allParameterValues key path changed: %s\n", keyPath.UTF8String);
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        frequencyTextField.stringValue = [frequencyParameter stringFromValue: nil];
+        
+        //[self updateFilterViewFrequencyAndMagnitudes];
+    });
 }
 
 /////////////////

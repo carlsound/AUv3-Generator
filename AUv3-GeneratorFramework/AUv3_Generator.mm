@@ -155,6 +155,12 @@ maxiSettings *oscillatorSettings;
 
 ////////////////////////////////
 
+-(void)dealloc {
+    // Deallocate resources as required.
+}
+
+////////////////////////////////
+
 #pragma mark - AUAudioUnit Overrides
 
 // If an audio unit has input, an audio unit's audio input connection points.
