@@ -36,6 +36,8 @@
 //#define MAXIMILIAN_PORTAUDIO
 #define MAXIMILIAN_RT_AUDIO
 
+#ifdef __cplus
+#include "stdlib.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -45,6 +47,7 @@
 #include <cerrno>
 #include <queue>
 #include <vector>
+#endif
 
 #if !defined(_WIN32) && (defined(unix) || defined(__unix__) || defined(__unix) || (defined(__APPLE__) && defined(__MACH__)))
 #define OS_IS_UNIX true

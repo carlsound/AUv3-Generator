@@ -6,7 +6,7 @@
 //  Copyright © 2018 John Carlson. All rights reserved.
 //
 
-#import <AUv3_GeneratorFramework/AUv3_GeneratorFramework.h>
+#import <AUv3_GeneratorFramework/AUv3_GeneratorFramework.mm>
 #import "AUv3_GeneratorViewControllerAndFactory.h"
 
 //#import <AudioToolbox/AudioToolbox.h>

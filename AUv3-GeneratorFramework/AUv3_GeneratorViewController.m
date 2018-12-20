@@ -128,7 +128,7 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
         
-        frequencyTextField.stringValue = [frequencyParameter stringFromValue: nil];
+        self->frequencyTextField.stringValue = [self->frequencyParameter stringFromValue: nil];
         
         //[self updateFilterViewFrequencyAndMagnitudes];
     });

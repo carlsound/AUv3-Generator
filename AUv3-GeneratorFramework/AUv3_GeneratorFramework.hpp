@@ -18,5 +18,6 @@ FOUNDATION_EXPORT const unsigned char AUv3_GeneratorFramework_VersionString[];
 
 #import "AUv3_Generator.h"
 #import "AUv3_GeneratorViewController.h"
+//#include "maximilian.h"
 
 @class AUv3ViewController;

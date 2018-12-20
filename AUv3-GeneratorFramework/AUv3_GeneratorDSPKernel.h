@@ -21,7 +21,7 @@ enum {
 
 /*
  AUv3_GeneratorDSPKernel
- Performs our filter signal processing.
+ Creates a tone signal.
  As a non-ObjC class, this is safe to use from render thread.
  */
 class AUv3_GeneratorDSPKernel : public DSPKernel {
@@ -85,14 +85,12 @@ public:
                 }
             }
         }
-        
     };
     
     
     // MARK: Member Functions
     
-    AUv3_GeneratorDSPKernel()
-    {
+    AUv3_GeneratorDSPKernel() {
         noteStates.resize(128);
         for (NoteState& state : noteStates) {
             state.kernel = this;
@@ -116,14 +114,9 @@ public:
     
     void setParameter(AUParameterAddress address, AUValue value) {
         switch (address) {
-            case InstrumentParamAttack:
-                attack = clamp(value, 0.001f, 10.f);
-                attackSamples = sampleRate * attack;
-                break;
-                
-            case InstrumentParamRelease:
-                release = clamp(value, 0.001f, 10.f);
-                releaseSamples = sampleRate * release;
+            case GeneratorParamFrequency:
+                //attack = clamp(value, 0.001f, 10.f);
+                //attackSamples = sampleRate * attack;
                 break;
         }
     }
@@ -140,78 +133,35 @@ public:
         }
     }
     
-    void startRamp(AUParameterAddress address, AUValue value, AUAudioFrameCount duration) override {
+    void startRamp(AUParameterAddress address, AUValue value, AUAudioFrameCount duration) /* override */ {
         // The attack and release parameters are not ramped.
-        setParameter(address, value);
+        //setParameter(address, value);
     }
     
     void setBuffers(AudioBufferList* outBufferList) {
         outBufferListPtr = outBufferList;
     }
+
     
-    virtual void handleMIDIEvent(AUMIDIEvent const& midiEvent) override {
-        if (midiEvent.length != 3) return;
-        uint8_t status = midiEvent.data[0] & 0xF0;
-        //uint8_t channel = midiEvent.data[0] & 0x0F; // works in omni mode.
-        switch (status) {
-            case 0x80 : { // note off
-                uint8_t note = midiEvent.data[1];
-                if (note > 127) break;
-                noteStates[note].noteOn(note, 0);
-                break;
-            }
-            case 0x90 : { // note on
-                uint8_t note = midiEvent.data[1];
-                uint8_t veloc = midiEvent.data[2];
-                if (note > 127 || veloc > 127) break;
-                noteStates[note].noteOn(note, veloc);
-                break;
-            }
-            case 0xB0 : { // control
-                uint8_t num = midiEvent.data[1];
-                if (num == 123) { // all notes off
-                    NoteState* noteState = playingNotes;
-                    while (noteState) {
-                        noteState->clear();
-                        noteState = noteState->next;
-                    }
-                    playingNotes = nullptr;
-                    playingNotesCount = 0;
-                }
-                break;
-            }
-        }
-    }
-    
-    void process(AUAudioFrameCount frameCount, AUAudioFrameCount bufferOffset) override {
-        float* outL = (float*)outBufferListPtr->mBuffers[0].mData + bufferOffset;
-        float* outR = (float*)outBufferListPtr->mBuffers[1].mData + bufferOffset;
-        
-        NoteState* noteState = playingNotes;
-        while (noteState) {
-            noteState->run(frameCount, outL, outR);
-            noteState = noteState->next;
-        }
+    void process(AUAudioFrameCount frameCount, AUAudioFrameCount bufferOffset) /* override */ {
+        //float* outL = (float*)outBufferListPtr->mBuffers[0].mData + bufferOffset;
+        //float* outR = (float*)outBufferListPtr->mBuffers[1].mData + bufferOffset;
         
         for (AUAudioFrameCount i = 0; i < frameCount; ++i) {
-            outL[i] *= .1f;
-            outR[i] *= .1f;
+            //outL[i] *= .1f;
+            //outR[i] *= .1f;
         }
     }
     
     // MARK: Member Variables
     
 private:
-    std::vector<NoteState> noteStates;
-    
     float sampleRate = 44100.0;
     double frequencyScale = 2. * M_PI / sampleRate;
     
     AudioBufferList* outBufferListPtr = nullptr;
     
 public:
-    
-    NoteState* playingNotes = nullptr;
     int playingNotesCount = 0;
     
     // Parameters.
