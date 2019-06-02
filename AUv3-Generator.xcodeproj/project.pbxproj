@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8907565A2103596600FF7013 /* maximilian.h in Headers */ = {isa = PBXBuildFile; fileRef = 890756582103596600FF7013 /* maximilian.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8907565A2103596600FF7013 /* maximilian.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 890756582103596600FF7013 /* maximilian.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		8907565B2103596600FF7013 /* maximilian.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 890756592103596600FF7013 /* maximilian.cpp */; };
 		891C867921C8A1EA00F34195 /* DSPKernel.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 891C867721C8A1EA00F34195 /* DSPKernel.hpp */; };
 		891C867A21C8A1EA00F34195 /* DSPKernel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 891C867821C8A1EA00F34195 /* DSPKernel.mm */; };
@@ -23,8 +23,6 @@
 		89B6A8AB20CDA9440066C828 /* AUv3_GeneratorViewControllerAndFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B6A8AA20CDA9440066C828 /* AUv3_GeneratorViewControllerAndFactory.m */; };
 		89B6A8B620CDA9440066C828 /* AUv3-GeneratorAppExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 89B6A8A720CDA9440066C828 /* AUv3-GeneratorAppExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		89B6A8C420CDA9A70066C828 /* AUv3_GeneratorFramework.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 89B6A8C220CDA9A70066C828 /* AUv3_GeneratorFramework.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		89B6A8C720CDA9A70066C828 /* AUv3_GeneratorFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B6A8C020CDA9A70066C828 /* AUv3_GeneratorFramework.framework */; };
-		89B6A8C820CDA9A70066C828 /* AUv3_GeneratorFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 89B6A8C020CDA9A70066C828 /* AUv3_GeneratorFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		89B6A8CE20CDA9BD0066C828 /* AUv3_GeneratorFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B6A8C020CDA9A70066C828 /* AUv3_GeneratorFramework.framework */; };
 		89B6A8D020CDA9CE0066C828 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B6A8CF20CDA9CE0066C828 /* AVFoundation.framework */; };
 		89B6A8D220CDAB9D0066C828 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B6A8D120CDAB9D0066C828 /* AudioToolbox.framework */; };
@@ -43,13 +41,6 @@
 			remoteGlobalIDString = 89B6A8A620CDA9440066C828;
 			remoteInfo = "AUv3-GeneratorAppExtension";
 		};
-		89B6A8C520CDA9A70066C828 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 89B6A88320CDA74B0066C828 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 89B6A8BF20CDA9A70066C828;
-			remoteInfo = "AUv3-GeneratorFramework";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,21 +55,10 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		89B6A8CC20CDA9A70066C828 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				89B6A8C820CDA9A70066C828 /* AUv3_GeneratorFramework.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		890756582103596600FF7013 /* maximilian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maximilian.h; sourceTree = "<group>"; };
+		890756582103596600FF7013 /* maximilian.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = maximilian.hpp; sourceTree = "<group>"; };
 		890756592103596600FF7013 /* maximilian.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = maximilian.cpp; sourceTree = "<group>"; };
 		891C867721C8A1EA00F34195 /* DSPKernel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DSPKernel.hpp; sourceTree = "<group>"; };
 		891C867821C8A1EA00F34195 /* DSPKernel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DSPKernel.mm; sourceTree = "<group>"; };
@@ -119,7 +99,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89B6A8C720CDA9A70066C828 /* AUv3_GeneratorFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +183,7 @@
 				89B6A8D520CDAF5E0066C828 /* AUv3_Generator.h */,
 				89B6A8D620CDAF5E0066C828 /* AUv3_Generator.mm */,
 				890756592103596600FF7013 /* maximilian.cpp */,
-				890756582103596600FF7013 /* maximilian.h */,
+				890756582103596600FF7013 /* maximilian.hpp */,
 				89B6A8C320CDA9A70066C828 /* Info.plist */,
 				8931B6E321057BD800C0ECEE /* AUv3_GeneratorViewController.xib */,
 				8931B6E521057C5D00C0ECEE /* AUv3_GeneratorViewController.h */,
@@ -237,7 +216,7 @@
 				891C867921C8A1EA00F34195 /* DSPKernel.hpp in Headers */,
 				891C867C21C8A24E00F34195 /* AUv3_GeneratorDSPKernel.h in Headers */,
 				89B6A8C420CDA9A70066C828 /* AUv3_GeneratorFramework.hpp in Headers */,
-				8907565A2103596600FF7013 /* maximilian.h in Headers */,
+				8907565A2103596600FF7013 /* maximilian.hpp in Headers */,
 				89B6A8D720CDAF5E0066C828 /* AUv3_Generator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,13 +232,11 @@
 				89B6A88820CDA74B0066C828 /* Frameworks */,
 				89B6A88920CDA74B0066C828 /* Resources */,
 				89B6A8BA20CDA9440066C828 /* Embed App Extensions */,
-				89B6A8CC20CDA9A70066C828 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				89B6A8B520CDA9440066C828 /* PBXTargetDependency */,
-				89B6A8C620CDA9A70066C828 /* PBXTargetDependency */,
 			);
 			name = "AUv3-GeneratorApp";
 			productName = "AUv3-Generator";
@@ -410,11 +387,6 @@
 			isa = PBXTargetDependency;
 			target = 89B6A8A620CDA9440066C828 /* AUv3-GeneratorAppExtension */;
 			targetProxy = 89B6A8B420CDA9440066C828 /* PBXContainerItemProxy */;
-		};
-		89B6A8C620CDA9A70066C828 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 89B6A8BF20CDA9A70066C828 /* AUv3-GeneratorFramework */;
-			targetProxy = 89B6A8C520CDA9A70066C828 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

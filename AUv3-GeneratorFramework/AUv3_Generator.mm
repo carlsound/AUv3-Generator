@@ -8,7 +8,7 @@
 
 #import "AUv3_Generator.h"
 
-#include "maximilian.h"
+#include "maximilian.hpp"
 
 //////////////////////////////////
 
@@ -52,11 +52,12 @@ maxiSettings *oscillatorSettings;
  */
 
 - (instancetype)initWithComponentDescription:
-        (AudioComponentDescription)componentDescription options:
-        (AudioComponentInstantiationOptions)options error:
-        (NSError **)outError {
+        (AudioComponentDescription)componentDescription options: (AudioComponentInstantiationOptions)options
+                                                          error: (NSError **)outError {
+    
     self = [super initWithComponentDescription:componentDescription
-            options:options error:outError];
+                                       options:options
+                                         error:outError];
     
     if (self == nil) {
         return nil;
@@ -95,7 +96,16 @@ maxiSettings *oscillatorSettings;
     */
     
     // Create parameter objects.
-    AUParameter *param1 = [AUParameterTree createParameterWithIdentifier:@"frequency" name:@"Frequency" address:frequencyParam min:15 max:40 unit:kAudioUnitParameterUnit_Hertz unitName:nil flags:0 valueStrings:nil dependentParameters:nil];
+    AUParameter *param1 = [AUParameterTree createParameterWithIdentifier: @"frequency"
+                                                                    name: @"Frequency"
+                                                                 address: frequencyParam
+                                                                     min: 20
+                                                                     max: 20000
+                                                                    unit: kAudioUnitParameterUnit_Hertz
+                                                                unitName: nil
+                                                                   flags: 0
+                                                            valueStrings: nil
+                                                     dependentParameters: nil];
     
     // Initialize the parameter values.
     param1.value = 22;
@@ -177,7 +187,7 @@ maxiSettings *oscillatorSettings;
 // Subclassers must override this property getter and should return the same object every time.
 // See sample code.
 - (AUAudioUnitBusArray *)outputBusses {
-    NSLog (@"MyAudioUnit outputBusses called");
+    //NSLog (@"MyAudioUnit outputBusses called");
     return _outputBusArray;
 }
 
@@ -244,6 +254,9 @@ maxiSettings *oscillatorSettings;
     if (![super allocateRenderResourcesAndReturnError:outError]) {
         return NO;
     }
+    
+    //_kernel.init(self.outputBus.format.channelCount, self.outputBus.format.sampleRate);
+    //_kernel.reset();
     
     // Validate that the bus formats are compatible.
     // Allocate your resources.
@@ -352,20 +365,11 @@ maxiSettings *oscillatorSettings;
     
         // Do event handling and signal processing here.
 
-        // cheat: use logged asbd's format from above (float + packed + noninterleaved)
-        /*
-        if (asbdCapture->mFormatID != kAudioFormatLinearPCM || asbdCapture->mFormatFlags != 0x29 || asbdCapture->mChannelsPerFrame != 2) {
-            return -999;
-        }
-         */
-
-        // pull in samples to filter
-        //pullInputBlock(actionFlags, timestamp, frameCount, 0, renderABLCapture);
-
         // copy samples from ABL, apply filter, write to outputData
         //size_t sampleSize = sizeof(Float32);
         
         for (int frame = 0; frame < frameCount; frame++) {
+            
             *totalFramesCapture += 1;
             
             int length = outputData->mBuffers[0].mDataByteSize;
@@ -381,21 +385,7 @@ maxiSettings *oscillatorSettings;
                     memcpy(outputData->mBuffers[renderBuf].mData,
                            tempMonoBuffer,
                            length);
-                
-            }
-                
-                //Float32 *sample = renderABLCapture->mBuffers[renderBuf].mData + (frame * asbdCapture->mBytesPerFrame);
-                
-                
-                // apply modulation
-                //Float32 time = totalFrames / asbdCapture->mSampleRate;
-                //*sample = *sample * fabs(sinf(M_PI * 2 * time * *frequencyCapture));
-
-                /*
-                 memcpy(outputData->mBuffers[renderBuf].mData + (frame * asbdCapture->mBytesPerFrame),
-                        sample,
-                        sampleSize);
-                 */
+                }
             }
         }
 

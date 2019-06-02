@@ -31,7 +31,7 @@
  *
  */
 
-#include "maximilian.h"
+#include "maximilian.hpp"
 #include "math.h"
 
 /*  Maximilian can be configured to load ogg vorbis format files using the 
